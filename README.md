@@ -1,25 +1,22 @@
+Forked from kippesikgithub (thanks!) 
+Added some links and info, and adjusted to my needs
+
 # LD2410 mmwave Motion detection
-LD2410 mmwave Motion detection in ESPHome for Home Assistant . Can be combined with temperature, humidity and lux sensor  
-sensor: https://nl.aliexpress.com/item/1005004786874722.html?spm=a2g0o.order_list.order_list_main.83.7b9c79d21Hc0g0&gatewayAdapt=Pc2Msite
-  
+
+LD2410 mmwave Motion detection + ESP8266 (Wemos d1 mini) Board in ESPHome for Home Assistant. 
+Can be combined with temperature, humidity and lux sensor, but I don't use lux sensor here.
+- LD2410 sensor: https://nl.aliexpress.com/item/1005004786874722.html
+- cable for LD2410: https://nl.aliexpress.com/item/1005004971647691.html
+- DHT11 digital Humidity & Temperature sensor https://nl.aliexpress.com/item/32840892862.html
+
 3D Printed box used: https://www.thingiverse.com/thing:5631878
   
 ### Step 1
-copy the code from uart_read_line_sensor_ld2410v3.h into a new file in the esphome directory, using for example Studio Code server
+Copy the code from uart_read_line_sensor_ld2410v3.h into a new file in the esphome directory, using for example Studio Code server
 
 ### Step 2
-Choose the ESP32 or ESP8266 code for your board  
+Pin outs
 ![image](https://user-images.githubusercontent.com/100353268/213939599-cc16b760-055d-4786-9fc2-663132c9dd59.png)
-
-#### Pinout ESP32 (ESP32-S2)
-esphome example code: esp-motion-kinderkamer-lucas.yaml  
-ESP32-S2 | LD2410  
-5V <-> VCC  
-GND <-> GND  
-GPIO18 <-> RX  
-GPIO33 <-> TX  
-GPIO5 <-> OUT  
-
 
 #### Pinout ESP8266 (Wemos d1 mini) Board
 esphome example code: esp-motion-toilet.yaml  
@@ -31,23 +28,24 @@ RX <-> TX
 D7 <-> OUT  
 ![image](https://user-images.githubusercontent.com/100353268/213941685-f02bab19-3bf9-4c9e-8396-ed6582ae09ed.png)
 
+ESP8266 | DHT11  
+3.3V <-> VDD  
+GND <-> GND   
+D2 <-> DATA 
+![signal-2023-03-03-023238_002](https://user-images.githubusercontent.com/74005072/222612204-518f1a7c-2aea-4dfc-9676-b5e277973766.jpeg)
+
   
-#### Example including ESP32-S2 + DHT11 + Lux sensor  
-esphome example code: esp-motion-kinderkamer-sophie.yaml  
-![image](https://user-images.githubusercontent.com/100353268/213941779-5eb1bda0-0fc9-4edf-bc72-381e0cae259f.png)
-![image](https://user-images.githubusercontent.com/100353268/213941793-3d5528d8-2f03-48c3-8c6d-71cf0ac28136.png)
-![image](https://user-images.githubusercontent.com/100353268/213941799-9a551b3f-e476-4d73-b4c2-06db9502a43a.png)
+#### Example including ESP8266 + DHT11 sensor  
+esphome example code: 
+![signal-2023-03-03-023401_002](https://user-images.githubusercontent.com/74005072/222612311-f6e99d1f-da2b-482f-a668-9d82682899e3.jpeg)
 
 
 #### Step 3
 Make sure you change all the !secret values, or create them in your esphome secrets  
-Change at least the following (example)  
-file: esp-motion-kinderkamer-lucas.yaml  
-- name of the board you use
-- names of the board in esphome and the motion sensor name (around line 166)
+
 
 #### Step 4
-Add to code to a new device in esphome  
+Add it to the yaml code of a new device in ESPhome  
 Once finsihed and sensor is online, you can add it in Home assistant or visit the webpage of the device.
 
 #### Home Assistant
