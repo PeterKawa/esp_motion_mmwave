@@ -1,16 +1,16 @@
 Forked from kippesikgithub (thanks!) 
 Added some links and info, and adjusted to my needs
 
-# LD2410 mmwave Motion detection
+# LD2410 mmwave Motion detection with temperature and humidity sensor for around 8 euro's (w/o housing)
 
 LD2410 mmwave Motion detection + ESP8266 (Wemos d1 mini) Board in ESPHome for Home Assistant. 
 Can be combined with temperature, humidity and lux sensor, but I don't use lux sensor here.
 
 Shopping list
-- ESP8266 (Wemos d1 mini): https://nl.aliexpress.com/item/4001157391459.html
-- LD2410 sensor: https://nl.aliexpress.com/item/1005004786874722.html
-- cable for LD2410: https://nl.aliexpress.com/item/1005004971647691.html
-- DHT11 digital Humidity & Temperature sensor https://nl.aliexpress.com/item/32840892862.html
+- ESP8266 (Wemos d1 mini)(E 2.00): https://nl.aliexpress.com/item/4001157391459.html
+- LD2410 sensor (E 3.50): https://nl.aliexpress.com/item/1005004786874722.html
+- cable for LD2410 (E 1.50): https://nl.aliexpress.com/item/1005004971647691.html
+- DHT11 digital Humidity & Temperature sensor (E 1.00) https://nl.aliexpress.com/item/32840892862.html
 
 - 3D Printed box: https://www.thingiverse.com/thing:5631878
   
