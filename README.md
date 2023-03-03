@@ -32,28 +32,28 @@ ESP8266 | DHT11
 3.3V <-> VDD  
 GND <-> GND   
 D2 <-> DATA 
-![signal-2023-03-03-023238_002](https://user-images.githubusercontent.com/74005072/222612204-518f1a7c-2aea-4dfc-9676-b5e277973766.jpeg)
+![signal-2023-03-03-023238_002](https://user-images.githubusercontent.com/74005072/222615325-db56ee88-5517-4e04-a8bb-0634b4329030.jpeg)
 
-  
+
 #### Example including ESP8266 + DHT11 sensor  
-esphome example code: 
-![signal-2023-03-03-023401_002](https://user-images.githubusercontent.com/74005072/222612311-f6e99d1f-da2b-482f-a668-9d82682899e3.jpeg)
+esphome example code: `presence-woonkamer_git.yaml`
 
+![signal-2023-03-03-023401_002](https://user-images.githubusercontent.com/74005072/222612311-f6e99d1f-da2b-482f-a668-9d82682899e3.jpeg)
 
 #### Step 3
 Make sure you change all the !secret values, or create them in your esphome secrets  
 
-
 #### Step 4
-Add it to the yaml code of a new device in ESPhome  
+Add example code to the yaml code of a new device in ESPhome  
 Once finsihed and sensor is online, you can add it in Home assistant or visit the webpage of the device.
 
 #### Home Assistant
-![image](https://user-images.githubusercontent.com/100353268/213941863-d037745b-490f-4d33-95c3-a1122b4e0908.png)
+![Screenshot from 2023-03-03 03-26-59](https://user-images.githubusercontent.com/74005072/222616032-f306ec58-261c-4068-8ed8-fb3bc4e97893.png)
+
 
 #### Web Config
-![image](https://user-images.githubusercontent.com/100353268/213941881-8a898fc7-f863-49ce-811d-e8e2b4ab90b9.png)
-![image](https://user-images.githubusercontent.com/100353268/213941904-7c9577e7-99bc-47e8-b3ce-d7743633914d.png)
+You can monitor the distance & sensitivity by temporary enabling `show_target_stats`
+![Screenshot from 2023-03-03 03-30-41](https://user-images.githubusercontent.com/74005072/222616576-55c012a3-9f28-40b0-b670-20131b6e72cc.png)
 
 
 ## other sources used  
