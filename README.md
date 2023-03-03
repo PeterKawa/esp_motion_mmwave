@@ -15,7 +15,8 @@ Shopping list
 - 3D Printed box: https://www.thingiverse.com/thing:5631878
   
 ### Step 1
-Copy the code from uart_read_line_sensor_ld2410v3.h into a new file in the esphome directory, using for example Studio Code server
+Install the ESPhome add-on;
+Then copy the code from uart_read_line_sensor_ld2410v3.h into a new file in the /config/esphome directory, using for example Studio Code server
 
 ### Step 2
 ### Pin outs
