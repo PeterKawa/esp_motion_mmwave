@@ -12,7 +12,7 @@ Shopping list
 - cable for LD2410: https://nl.aliexpress.com/item/1005004971647691.html
 - DHT11 digital Humidity & Temperature sensor https://nl.aliexpress.com/item/32840892862.html
 
-3D Printed box used: https://www.thingiverse.com/thing:5631878
+- 3D Printed box: https://www.thingiverse.com/thing:5631878
   
 ### Step 1
 Copy the code from uart_read_line_sensor_ld2410v3.h into a new file in the esphome directory, using for example Studio Code server
