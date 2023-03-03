@@ -20,7 +20,6 @@ Copy the code from uart_read_line_sensor_ld2410v3.h into a new file in the espho
 ![image](https://user-images.githubusercontent.com/100353268/213939599-cc16b760-055d-4786-9fc2-663132c9dd59.png)
 
 #### Pinout ESP8266 (Wemos d1 mini) Board
-esphome example code: esp-motion-toilet.yaml  
 
 ##### ESP8266 | LD2410  
 5V <-> VCC  
