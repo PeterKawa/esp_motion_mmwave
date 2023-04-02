@@ -13,6 +13,9 @@ Shopping list
 - DHT11 digital Humidity & Temperature sensor (E 1.00) https://nl.aliexpress.com/item/32840892862.html
 
 - 3D Printed box: https://www.thingiverse.com/thing:5631878
+Price example:
+6x box+lid, white, € 35 all-in, (printics.nl)
+
   
 ### Step 1
 Install the ESPhome add-on;
