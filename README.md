@@ -12,9 +12,9 @@ Shopping list
 - cable for LD2410 (E 1.50): https://nl.aliexpress.com/item/1005004971647691.html
 - DHT11 digital Humidity & Temperature sensor (E 1.00) https://nl.aliexpress.com/item/32840892862.html
 
-- 3D Printed box: https://www.thingiverse.com/thing:5631878
+- 3D-printed housing: https://www.thingiverse.com/thing:5631878
 Price example:
-6x box+lid, white, € 35 all-in, (printics.nl)
+6x housing+lid, white, € 35 all-in, (printics.nl)
 ![signal-2023-04-07-165048_002](https://user-images.githubusercontent.com/74005072/230629117-bf4672eb-1cd2-47e3-a572-2170de3b5f0c.jpeg)
 
   
