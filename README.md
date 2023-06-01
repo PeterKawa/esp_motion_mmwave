@@ -65,6 +65,10 @@ Once finsihed and sensor is online, you can add it in Home assistant or visit th
 You can monitor the distance & sensitivity by temporary enabling `show_target_stats`
 ![Screenshot from 2023-03-03 03-30-41](https://user-images.githubusercontent.com/74005072/222616576-55c012a3-9f28-40b0-b670-20131b6e72cc.png)
 
+#### Impression
+![20230530_200249~01](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/c054a4e8-73b5-4284-9585-6a25a5985751)
+
+![20230601_235500](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/02c19245-f45f-44e9-b6d7-53d5c66e8882)
 
 ## other sources used  
 https://community.home-assistant.io/t/mmwave-wars-one-sensor-module-to-rule-them-all/453260/2
