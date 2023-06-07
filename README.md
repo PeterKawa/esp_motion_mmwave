@@ -56,14 +56,12 @@ D2 <-> DATA
 Something like this:
 ![signal-2023-03-03-023401_002](https://user-images.githubusercontent.com/74005072/222612311-f6e99d1f-da2b-482f-a668-9d82682899e3.jpeg)
 
-#### In the files here, you'll find an example ESPhome yaml for this ESP8266 + DHT11 + LD2410B sensors: 
-`presence-woonkamer_git.yaml`
-
 #### Step 3
 Make sure you change all the !secret values, or create them in your esphome secrets  
 
 #### Step 4
-_Add_ (do NOT overwrite), so ADD the example yaml code to the yaml code of a new device in ESPhome  
+_Add_ (do NOT overwrite), so ADD the example yaml code to the yaml code of a new device in ESPhome
+In the files here, look for: `presence-woonkamer_git.yaml`
 Once finsihed and sensor is online, you can add it in Home assistant or visit the webpage of the device.
 
 
