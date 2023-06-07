@@ -71,7 +71,8 @@ Something like this:
 Make sure you change all the !secret values, or create them in your /config/esphome/secrets.yaml  
 
 ### Step 7
-_Merge_ (do NOT overwrite), so MERGE the example yaml code (`presence-woonkamer_git.yaml`) to the yaml code of a new device in ESPhome. You should keep the unique device keys and password stuff:
+_Merge_ (do NOT overwrite), so MERGE the example yaml code (`presence-woonkamer_git.yaml`) to the yaml code of a new device in ESPhome. You should keep the unique device keys and password stuff;
+In the end, the new device yaml should look the same as the example yaml, except from these details:
 ```
 # Enable Home Assistant API
 api:
