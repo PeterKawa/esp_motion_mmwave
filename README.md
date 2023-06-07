@@ -20,15 +20,19 @@ Price example:
 
   
 ### Step 1
-In HA, install the ESPhome add-on;
+- Download this repository: https://github.com/PeterKawa/esp_motion_mmwave/archive/refs/heads/main.zip
 
-Then copy the code from uart_read_line_sensor_ld2410v3.h into a new file in the /config/esphome directory, using for example Studio Code server
+- In HA, install the ESPhome add-on;
 
-More:
+- Then copy the code from the downloaded file 
+`uart_read_line_sensor_ld2410v3.h` 
+into a new file in the /config/esphome directory, using for example Studio Code server
+
+Extended ESPhome how-to:
 https://esphome.io/guides/getting_started_hassio.html
 
 ### Step 2
-### Pin outs
+#### Pin outs
 How to connect the stuff
 
 #### Pinout ESP8266 (Wemos d1 mini) Board
@@ -60,7 +64,8 @@ Something like this:
 Make sure you change all the !secret values, or create them in your esphome secrets  
 
 #### Step 4
-_Add_ (do NOT overwrite), so ADD the example yaml code to the yaml code of a new device in ESPhome
+_Add_ (do NOT overwrite), so ADD the example yaml code to the yaml code of a new device in ESPhome;
+
 In the files here, look for: `presence-woonkamer_git.yaml`
 Once finsihed and sensor is online, you can add it in Home assistant or visit the webpage of the device.
 
