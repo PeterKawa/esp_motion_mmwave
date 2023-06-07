@@ -1,14 +1,15 @@
 Forked from kippesikgithub (thanks!) 
 Added some links and info, and adjusted to my needs
 
-# LD2410 mmwave Motion detection with temperature and humidity sensor for ~€8,-  (housing: ~€6,-)
+# LD2410B mmwave Motion detection with temperature and humidity sensor for ~€8,-  (housing: ~€6,-)
 
-LD2410 mmwave Motion detection + ESP8266 (Wemos d1 mini) Board in ESPHome for Home Assistant. 
-Can be combined with temperature, humidity and lux sensor, but I don't use lux sensor here.
+LD2410B mmwave Motion detection + ESP8266 (Wemos d1 mini) Board in ESPHome for Home Assistant. 
+Can be combined with temperature, humidity and lux sensor, but I don't use lux sensor here. The LD2410B can be updated to measure luminance as well (I've read somewhere)
 
 Shopping list
 - ESP8266 (Wemos d1 mini)(E 2.00): https://nl.aliexpress.com/item/4001157391459.html
-- LD2410 sensor (E 3.50): https://nl.aliexpress.com/item/1005004786874722.html
+- LD2410B (with Bluetooth) sensor (E 3.50): 
+https://a.aliexpress.com/_mqyYb5S
 - cable for LD2410 (E 1.50): https://nl.aliexpress.com/item/1005004971647691.html
 - DHT11 digital Humidity & Temperature sensor (E 1.00) https://nl.aliexpress.com/item/32840892862.html
 
@@ -27,6 +28,7 @@ https://esphome.io/guides/getting_started_hassio.html
 
 ### Step 2
 ### Pin outs
+How to connect the stuff
 
 ![image](https://user-images.githubusercontent.com/100353268/213939599-cc16b760-055d-4786-9fc2-663132c9dd59.png)
 
@@ -49,8 +51,7 @@ D2 <-> DATA
 ![signal-2023-03-03-023238_002](https://user-images.githubusercontent.com/74005072/222615325-db56ee88-5517-4e04-a8bb-0634b4329030.jpeg)
 
 
-#### Example including ESP8266 + DHT11 sensor  
-esphome example code: `presence-woonkamer_git.yaml`
+#### Example ESPhome yaml including ESP8266 + DHT11 sensor: `presence-woonkamer_git.yaml`
 
 ![signal-2023-03-03-023401_002](https://user-images.githubusercontent.com/74005072/222612311-f6e99d1f-da2b-482f-a668-9d82682899e3.jpeg)
 
