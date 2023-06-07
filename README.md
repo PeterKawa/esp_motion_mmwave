@@ -77,10 +77,10 @@ You can monitor the distance & sensitivity by temporary enabling `show_target_st
 Still quite small:
 ![20230530_200249~01](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/c054a4e8-73b5-4284-9585-6a25a5985751)
 
-#### Hidden from view inside a (fake) flower pot ;-) :
+And hidden from view inside a (fake) flower pot ;-)
 ![20230601_235500](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/02c19245-f45f-44e9-b6d7-53d5c66e8882)
 
-## other sources used  
+### Other sources used  
 https://community.home-assistant.io/t/mmwave-wars-one-sensor-module-to-rule-them-all/453260/2
   
 https://github.com/rain931215/ESPHome-LD2410
