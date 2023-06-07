@@ -71,7 +71,7 @@ Something like this:
 Make sure you change all the !secret values, or create them in your /config/esphome/secrets.yaml  
 
 ### Step 7
-_Add_ (do NOT overwrite), so ADD the example yaml code (`presence-woonkamer_git.yaml`) to the yaml code of a new device in ESPhome
+_Merge_ (do NOT overwrite), so MERGE the example yaml code (`presence-woonkamer_git.yaml`) to the yaml code of a new device in ESPhome. You should keep the unique device keys and stuff
 
 Once finsihed and sensor is online, you can add it in Home assistant
 
