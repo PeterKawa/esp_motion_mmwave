@@ -36,7 +36,7 @@ https://i.stack.imgur.com/d7Ykr.jpg
 Connect the LD2410 cable:
 ![image](https://user-images.githubusercontent.com/100353268/213939599-cc16b760-055d-4786-9fc2-663132c9dd59.png)
 
-##### ESP8266 | LD2410  
+##### ESP8266 | LD2410B  
 5V <-> VCC  
 GND <-> GND  
 TX <-> RX  
@@ -54,7 +54,7 @@ D2 <-> DATA
 Something like this:
 ![signal-2023-03-03-023401_002](https://user-images.githubusercontent.com/74005072/222612311-f6e99d1f-da2b-482f-a668-9d82682899e3.jpeg)
 
-#### In the files here, you'll find an example ESPhome yaml including ESP8266 + DHT11 sensor: 
+#### In the files here, you'll find an example ESPhome yaml for this ESP8266 + DHT11 + LD2410B sensors: 
 `presence-woonkamer_git.yaml`
 
 #### Step 3
