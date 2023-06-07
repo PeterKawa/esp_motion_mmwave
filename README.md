@@ -16,6 +16,7 @@ https://a.aliexpress.com/_mqyYb5S
 - 3D-printed housing: https://www.thingiverse.com/thing:5631878
 Price example:
 6x housing+lid, white, € 35 all-in, (printics.nl)
+
 ![signal-2023-04-07-165048_002](https://user-images.githubusercontent.com/74005072/230629117-bf4672eb-1cd2-47e3-a572-2170de3b5f0c.jpeg)
 
   
