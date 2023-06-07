@@ -22,6 +22,8 @@ Price example:
 Install the ESPhome add-on;
 
 Then copy the code from uart_read_line_sensor_ld2410v3.h into a new file in the /config/esphome directory, using for example Studio Code server
+More:
+https://esphome.io/guides/getting_started_hassio.html
 
 ### Step 2
 ### Pin outs
@@ -30,6 +32,7 @@ Then copy the code from uart_read_line_sensor_ld2410v3.h into a new file in the 
 
 #### Pinout ESP8266 (Wemos d1 mini) Board
 
+Connect the LD2410 cable:
 ##### ESP8266 | LD2410  
 5V <-> VCC  
 GND <-> GND  
@@ -37,6 +40,7 @@ TX <-> RX
 RX <-> TX  
 D7 <-> OUT  
 
+Solder three wires:
 ##### ESP8266 | DHT11  
 3.3V <-> VDD  
 GND <-> GND   
@@ -54,7 +58,7 @@ esphome example code: `presence-woonkamer_git.yaml`
 Make sure you change all the !secret values, or create them in your esphome secrets  
 
 #### Step 4
-Add example code to the yaml code of a new device in ESPhome  
+_Add_ (do NOT overwrite), so ADD the example yaml code to the yaml code of a new device in ESPhome  
 Once finsihed and sensor is online, you can add it in Home assistant or visit the webpage of the device.
 
 #### Home Assistant
