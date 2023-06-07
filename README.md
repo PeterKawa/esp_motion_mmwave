@@ -25,9 +25,13 @@ Price example:
 
 - In HA, install the ESPhome add-on;
 
-- Then copy the code from the downloaded file 
-`uart_read_line_sensor_ld2410v3.h` 
-into a new file in the /config/esphome directory, using for example Studio Code server
+- Then 
+- - copy the code from the downloaded file `uart_read_line_sensor_ld2410v3.h` 
+into a new file in the /config/esphome directory, using for example 'Studio Code server'.
+Do the same with the downloaded file `presence-woonkamer_git.yaml` 
+- Or 
+- - use the 'File editor' and upload those files to /config/esphome
+ 
 
 Extended ESPhome how-to:
 https://esphome.io/guides/getting_started_hassio.html
