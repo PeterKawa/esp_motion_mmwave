@@ -38,10 +38,10 @@ In HA, install the ESPhome add-on;
 Extended ESPhome how-to:
 https://esphome.io/guides/getting_started_hassio.html
 
-#### Pin outs
+### Pin outs
 How to connect the stuff
 
-#### Pinout ESP8266 (Wemos d1 mini) Board
+##### Pinout ESP8266 (Wemos d1 mini) Board
 ![image](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/42f1f7d2-fb61-491c-b4b7-2984aa8e8133)
 
 ### Step 4
@@ -67,10 +67,10 @@ D2 <-> DATA
 Something like this:
 ![signal-2023-03-03-023401_002](https://user-images.githubusercontent.com/74005072/222612311-f6e99d1f-da2b-482f-a668-9d82682899e3.jpeg)
 
-#### Step 6
+### Step 6
 Make sure you change all the !secret values, or create them in your /config/esphome/secrets.yaml  
 
-#### Step 7
+### Step 7
 _Add_ (do NOT overwrite), so ADD the example yaml code (`presence-woonkamer_git.yaml`) to the yaml code of a new device in ESPhome
 
 Once finsihed and sensor is online, you can add it in Home assistant
