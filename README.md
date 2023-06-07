@@ -10,7 +10,7 @@ Shopping list
 - ESP8266 (Wemos d1 mini)(E 2.00): https://nl.aliexpress.com/item/4001157391459.html
 - LD2410B (with Bluetooth) sensor (E 3.50): 
 https://a.aliexpress.com/_mqyYb5S
-- cable for LD2410 (E 1.50): https://nl.aliexpress.com/item/1005004971647691.html
+- cable for LD2410B (E 1.50): https://nl.aliexpress.com/item/1005004971647691.html
 - DHT11 digital Humidity & Temperature sensor (E 1.00) https://nl.aliexpress.com/item/32840892862.html
 
 - 3D-printed housing: https://www.thingiverse.com/thing:5631878
@@ -20,7 +20,7 @@ Price example:
 
   
 ### Step 1
-Install the ESPhome add-on;
+In HA, install the ESPhome add-on;
 
 Then copy the code from uart_read_line_sensor_ld2410v3.h into a new file in the /config/esphome directory, using for example Studio Code server
 More:
@@ -30,11 +30,12 @@ https://esphome.io/guides/getting_started_hassio.html
 ### Pin outs
 How to connect the stuff
 
-![image](https://user-images.githubusercontent.com/100353268/213939599-cc16b760-055d-4786-9fc2-663132c9dd59.png)
-
 #### Pinout ESP8266 (Wemos d1 mini) Board
+https://i.stack.imgur.com/d7Ykr.jpg
 
 Connect the LD2410 cable:
+![image](https://user-images.githubusercontent.com/100353268/213939599-cc16b760-055d-4786-9fc2-663132c9dd59.png)
+
 ##### ESP8266 | LD2410  
 5V <-> VCC  
 GND <-> GND  
@@ -42,16 +43,17 @@ TX <-> RX
 RX <-> TX  
 D7 <-> OUT  
 
-Solder three wires:
+Solder three wires to the DHT11:
+![signal-2023-03-03-023238_002](https://user-images.githubusercontent.com/74005072/222615325-db56ee88-5517-4e04-a8bb-0634b4329030.jpeg)
+
 ##### ESP8266 | DHT11  
 3.3V <-> VDD  
 GND <-> GND   
 D2 <-> DATA 
 
-![signal-2023-03-03-023238_002](https://user-images.githubusercontent.com/74005072/222615325-db56ee88-5517-4e04-a8bb-0634b4329030.jpeg)
 
-
-#### Example ESPhome yaml including ESP8266 + DHT11 sensor: `presence-woonkamer_git.yaml`
+#### Example ESPhome yaml including ESP8266 + DHT11 sensor: 
+`presence-woonkamer_git.yaml`
 
 ![signal-2023-03-03-023401_002](https://user-images.githubusercontent.com/74005072/222612311-f6e99d1f-da2b-482f-a668-9d82682899e3.jpeg)
 
