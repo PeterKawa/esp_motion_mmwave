@@ -51,11 +51,11 @@ Solder three wires to the DHT11:
 GND <-> GND   
 D2 <-> DATA 
 
-
-#### Example ESPhome yaml including ESP8266 + DHT11 sensor: 
-`presence-woonkamer_git.yaml`
-
+Something like this:
 ![signal-2023-03-03-023401_002](https://user-images.githubusercontent.com/74005072/222612311-f6e99d1f-da2b-482f-a668-9d82682899e3.jpeg)
+
+#### In the files here, you'll find an example ESPhome yaml including ESP8266 + DHT11 sensor: 
+`presence-woonkamer_git.yaml`
 
 #### Step 3
 Make sure you change all the !secret values, or create them in your esphome secrets  
@@ -63,6 +63,7 @@ Make sure you change all the !secret values, or create them in your esphome secr
 #### Step 4
 _Add_ (do NOT overwrite), so ADD the example yaml code to the yaml code of a new device in ESPhome  
 Once finsihed and sensor is online, you can add it in Home assistant or visit the webpage of the device.
+
 
 #### Home Assistant
 ![Screenshot from 2023-03-03 03-26-59](https://user-images.githubusercontent.com/74005072/222616032-f306ec58-261c-4068-8ed8-fb3bc4e97893.png)
@@ -76,7 +77,7 @@ You can monitor the distance & sensitivity by temporary enabling `show_target_st
 Still quite small:
 ![20230530_200249~01](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/c054a4e8-73b5-4284-9585-6a25a5985751)
 
-Hidden from view inside a (fake) flower pot ;-) :
+#### Hidden from view inside a (fake) flower pot ;-) :
 ![20230601_235500](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/02c19245-f45f-44e9-b6d7-53d5c66e8882)
 
 ## other sources used  
