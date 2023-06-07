@@ -21,29 +21,29 @@ Price example:
 
   
 ### Step 1
-- Download this repository: https://github.com/PeterKawa/esp_motion_mmwave/archive/refs/heads/main.zip
+Download this repository: https://github.com/PeterKawa/esp_motion_mmwave/archive/refs/heads/main.zip
 
-- In HA, install the ESPhome add-on;
+### Step 2
+##### A. 
+copy the code from the downloaded file `uart_read_line_sensor_ld2410v3.h` 
+into a new file in the /config/esphome directory, using for example 'Studio Code server'
+Do the same with the downloaded file `presence-woonkamer_git.yaml`
+##### Or B.
+use the 'File editor' and upload those 2 files to /config/esphome
 
-- Then 
-- - copy the code from the downloaded file `uart_read_line_sensor_ld2410v3.h` 
-into a new file in the /config/esphome directory, using for example 'Studio Code server'.
-Do the same with the downloaded file `presence-woonkamer_git.yaml` 
-- Or 
-- - use the 'File editor' and upload those files to /config/esphome
- 
+### Step 3 
+In HA, install the ESPhome add-on; 
 
 Extended ESPhome how-to:
 https://esphome.io/guides/getting_started_hassio.html
 
-### Step 2
 #### Pin outs
 How to connect the stuff
 
 #### Pinout ESP8266 (Wemos d1 mini) Board
 ![image](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/42f1f7d2-fb61-491c-b4b7-2984aa8e8133)
 
-
+### Step 4
 Connect the LD2410 cable:
 ![image](https://user-images.githubusercontent.com/100353268/213939599-cc16b760-055d-4786-9fc2-663132c9dd59.png)
 
@@ -54,6 +54,7 @@ TX <-> RX
 RX <-> TX  
 D7 <-> OUT  
 
+### Step 5
 Solder three wires to the DHT11:
 ![signal-2023-03-03-023238_002](https://user-images.githubusercontent.com/74005072/222615325-db56ee88-5517-4e04-a8bb-0634b4329030.jpeg)
 
@@ -65,14 +66,13 @@ D2 <-> DATA
 Something like this:
 ![signal-2023-03-03-023401_002](https://user-images.githubusercontent.com/74005072/222612311-f6e99d1f-da2b-482f-a668-9d82682899e3.jpeg)
 
-#### Step 3
-Make sure you change all the !secret values, or create them in your esphome secrets  
+#### Step 6
+Make sure you change all the !secret values, or create them in your /config/esphome/secrets.yaml  
 
-#### Step 4
-_Add_ (do NOT overwrite), so ADD the example yaml code to the yaml code of a new device in ESPhome;
+#### Step 7
+_Add_ (do NOT overwrite), so ADD the example yaml code (`presence-woonkamer_git.yaml`) to the yaml code of a new device in ESPhome
 
-In the files here, look for: `presence-woonkamer_git.yaml`
-Once finsihed and sensor is online, you can add it in Home assistant or visit the webpage of the device.
+Once finsihed and sensor is online, you can add it in Home assistant
 
 
 #### Home Assistant
