@@ -23,6 +23,7 @@ Price example:
 In HA, install the ESPhome add-on;
 
 Then copy the code from uart_read_line_sensor_ld2410v3.h into a new file in the /config/esphome directory, using for example Studio Code server
+
 More:
 https://esphome.io/guides/getting_started_hassio.html
 
