@@ -28,7 +28,7 @@ Download this repository: https://github.com/PeterKawa/esp_motion_mmwave/archive
 copy the code from the downloaded file `uart_read_line_sensor_ld2410v3.h` 
 into a new file in the /config/esphome directory, using for example 'Studio Code server'; 
 
-Do the same with the downloaded file `presence-woonkamer_git.yaml`
+Do the same with the downloaded file `esp8266-template.yaml`
 ##### Or B.
 use the 'File editor' and upload those 2 files to /config/esphome
 
