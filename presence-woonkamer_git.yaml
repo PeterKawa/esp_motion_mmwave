@@ -1,5 +1,5 @@
 esphome:
-  name: "presence-woonkamer"
+  name: "esp8266-template"
   includes:
     - uart_read_line_sensor_ld2410v3.h
   on_boot:
@@ -151,14 +151,14 @@ sensor:
     pin: GPIO4
     # pedw: ESP8266 SDA (GPIO4 / D2) (send/receive data)
     temperature:
-      name: "presence-woonkamer-temperature"
+      name: "esp8266-template-temperature"
       filters:
         - offset: -1.0
         - sliding_window_moving_average:
             window_size: 10
             send_every: 10
     humidity:
-      name: "presence-woonkamer-humidity"
+      name: "esp8266-template-humidity"
       filters:
         - sliding_window_moving_average:
             window_size: 10
@@ -170,7 +170,7 @@ sensor:
 ###      BUT GPIO17 lacks on the D1mini Wemos board <<<<<<<<<
 ###  - platform: adc
 ###    pin: GPIO17
-###    name: "presence-woonkamer-illuminance"
+###    name: "esp8266-template-illuminance"
 ###    update_interval: '30s'
 ###    unit_of_measurement: lux
 ###    filters:
@@ -185,7 +185,7 @@ custom_component:
 
 binary_sensor:
   - platform: gpio
-    name: presence-woonkamer-occupancy
+    name: "esp8266-template-occupancy"
     id: mmwave_presence_ld2410
     pin: GPIO13 # = D7
     device_class: motion
