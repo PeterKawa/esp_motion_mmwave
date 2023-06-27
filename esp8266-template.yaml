@@ -105,7 +105,7 @@ sensor:
                         (to_string(seconds))
                       ).c_str();
 
-  - platform: custom # currently crashes ESP32
+  - platform: custom 
     lambda: |-
       auto uart_component = static_cast<LD2410 *>(ld2410);
       //return {uart_component->movingTargetDistance,uart_component->movingTargetEnergy,uart_component->stillTargetDistance,uart_component->stillTargetEnergy,uart_component->detectDistance};
