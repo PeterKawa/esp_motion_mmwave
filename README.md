@@ -1,18 +1,26 @@
-Forked from kippesikgithub (thanks!) 
+<i>Forked from kippesikgithub (thanks!)</i>
 Added some links and info, and adjusted to my needs
 
-### LD2410B mmwave Motion detection with temperature and humidity sensor for ~€8,-  (housing: ~€6,-)
+### LD2410B mmwave Motion detection with temperature, humidity, (lux) sensors for ~€9,-  (housing: ~€6,-)
 
 LD2410B mmwave Motion detection + ESP8266 (Wemos d1 mini) Board in ESPHome for Home Assistant. 
 Can be combined with temperature, humidity and lux sensor, but I don't use lux sensor here. The LD2410B can be updated to measure luminance as well (I've read somewhere)
 
-Shopping list
-- ESP8266 (Wemos d1 mini)(E 2.00): https://nl.aliexpress.com/item/4001157391459.html
+#### Shopping list
+##### Board
+- ESP8266 (Wemos d1 mini)(E 2.00): https://nl.aliexpress.com/item/4001157391459.html<br/>
+OR
+- ESP32-S2 mini (E 2.20): https://nl.aliexpress.com/item/1005004344359250.html
+##### Sensors
 - LD2410B (with Bluetooth) sensor (E 3.50): 
 https://a.aliexpress.com/_mqyYb5S
-- cable for LD2410B (E 1.50): https://nl.aliexpress.com/item/1005004971647691.html
+- - cable for LD2410B (E 1.50): https://nl.aliexpress.com/item/1005004971647691.html
 - DHT11 digital Humidity & Temperature sensor (E 1.00) https://nl.aliexpress.com/item/32840892862.html
 
+###### Only for ESP32-S2:
+- Luminance sensor KY-018 3pin (E 0.80): https://nl.aliexpress.com/item/32820189174.html
+
+##### Housing
 - 3D-printed housing: https://www.thingiverse.com/thing:5631878
 Price example:
 6x housing+lid, white, € 35 all-in, (printics.nl)
@@ -56,17 +64,12 @@ D7 <-> OUT
 ![ESP32_S2_mini pinout](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/e8d03e0a-b853-443a-b7e0-6c9bee976555)
 
 
-##### ESP32-S2 | LD2410B
-5V <-> VCC
-
-GND <-> GND
-
-GPIO18 <-> RX
-
-GPIO33 <-> TX
-
-GPIO5 <-> OUT
-
+##### ESP32-S2 | LD2410B<br/>
+5V <-> VCC<br/>
+GND <-> GND<br/>
+GPIO18 <-> RX<br/>
+GPIO33 <-> TX<br/>
+GPIO5 <-> OUT<br/>
 (ESPHome example code: esp32-S2-template.yaml)
 
 ### Step 4
@@ -83,6 +86,19 @@ Solder three wires to the DHT11:
 3.3V <-> VDD  
 GND <-> GND   
 D2 <-> DATA 
+
+##### ESP32-S2 | DHT11  
+3V3 <-> VDD  
+GND <-> GND   
+GPIO 09 <-> DATA 
+
+##### LUMI sensor KY-018 3pin
+![Screenshot from 2023-06-28 17-03-35](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/6807c286-8ba2-4509-bcae-18f55125ff2a)
+
+##### ESP32-S2 | LUMI sensor KY-018 3pin
+3V3 <-> Middle pin  
+GND <-> - (minus sign)   
+GPIO 03 <-> S 
 
 Something like this:
 ![signal-2023-03-03-023401_002](https://user-images.githubusercontent.com/74005072/222612311-f6e99d1f-da2b-482f-a668-9d82682899e3.jpeg)
