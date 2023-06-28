@@ -3,11 +3,11 @@ Added some links and info, and adjusted to my needs
 
 ### LD2410B mmwave Motion detection with temperature, humidity, (lux) sensors for ~€9,-  (housing: ~€6,-)
 
-LD2410B mmwave Motion detection + ESP8266 (Wemos d1 mini) Board in ESPHome for Home Assistant. 
+LD2410B mmwave Motion detection + ESP8266 (Wemos d1 mini) / ESP32-S2 mini Board in ESPHome for Home Assistant. 
 Can be combined with temperature, humidity and lux sensor, but I don't use lux sensor here. The LD2410B can be updated to measure luminance as well (I've read somewhere)
 
 #### Shopping list
-##### Board
+##### Boards
 - ESP8266 (Wemos d1 mini)(€ 2.00): https://nl.aliexpress.com/item/4001157391459.html<br/>
 OR
 - ESP32-S2 mini (€ 2.20): https://nl.aliexpress.com/item/1005004344359250.html
@@ -36,7 +36,7 @@ Download this repository: https://github.com/PeterKawa/esp_motion_mmwave/archive
 copy the code from the downloaded file `uart_read_line_sensor_ld2410v3.h` 
 into a new file in the /config/esphome directory, using for example 'Studio Code server'; 
 
-Do the same with the downloaded file `esp8266-template.yaml`
+Do the same with the downloaded file `esp8266-template.yaml` and/or `esp32-S2-template.yaml`
 ##### Or B.
 use the 'File editor' and upload those 2 files to /config/esphome
 
