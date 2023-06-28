@@ -8,17 +8,17 @@ Can be combined with temperature, humidity and lux sensor, but I don't use lux s
 
 #### Shopping list
 ##### Board
-- ESP8266 (Wemos d1 mini)(E 2.00): https://nl.aliexpress.com/item/4001157391459.html<br/>
+- ESP8266 (Wemos d1 mini)(€ 2.00): https://nl.aliexpress.com/item/4001157391459.html<br/>
 OR
-- ESP32-S2 mini (E 2.20): https://nl.aliexpress.com/item/1005004344359250.html
+- ESP32-S2 mini (€ 2.20): https://nl.aliexpress.com/item/1005004344359250.html
 ##### Sensors
-- LD2410B (with Bluetooth) sensor (E 3.50): 
+- LD2410B (with Bluetooth) sensor (€ 3.50): 
 https://a.aliexpress.com/_mqyYb5S
-- - cable for LD2410B (E 1.50): https://nl.aliexpress.com/item/1005004971647691.html
-- DHT11 digital Humidity & Temperature sensor (E 1.00) https://nl.aliexpress.com/item/32840892862.html
+- - cable for LD2410B (€ 1.50): https://nl.aliexpress.com/item/1005004971647691.html
+- DHT11 digital Humidity & Temperature sensor (€ 1.00) https://nl.aliexpress.com/item/32840892862.html
 
 ###### Only for ESP32-S2:
-- Luminance sensor KY-018 3pin (E 0.80): https://nl.aliexpress.com/item/32820189174.html
+- Luminance sensor KY-018 3pin (€ 0.80): https://nl.aliexpress.com/item/32820189174.html
 
 ##### Housing
 - 3D-printed housing: https://www.thingiverse.com/thing:5631878
