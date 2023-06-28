@@ -57,17 +57,11 @@ D7 <-> OUT
 
 
 ##### ESP32-S2 | LD2410B
-
 5V <-> VCC
-
 GND <-> GND
-
 GPIO18 <-> RX
-
 GPIO33 <-> TX
-
 GPIO5 <-> OUT
-
 (ESPHome example code: esp32-S2-template.yaml)
 
 ### Step 4
@@ -77,6 +71,7 @@ Connect the LD2410B cable:
 
 ### Step 5
 Solder three wires to the DHT11:
+
 ![signal-2023-03-03-023238_002](https://user-images.githubusercontent.com/74005072/222615325-db56ee88-5517-4e04-a8bb-0634b4329030.jpeg)
 
 ##### ESP8266 | DHT11  
