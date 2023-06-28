@@ -44,16 +44,6 @@ How to connect the stuff
 ##### Pinout ESP8266 (Wemos d1 mini) Board
 ![image](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/42f1f7d2-fb61-491c-b4b7-2984aa8e8133)
 
-
-##### Pinout ESP32-S2 mini Board
-![ESP32_S2_mini pinout](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/e8d03e0a-b853-443a-b7e0-6c9bee976555)
-
-
-### Step 4
-Connect the LD2410B cable:
-
-![image](https://user-images.githubusercontent.com/100353268/213939599-cc16b760-055d-4786-9fc2-663132c9dd59.png)
-
 ##### ESP8266 | LD2410B  
 5V <-> VCC  
 GND <-> GND  
@@ -62,13 +52,28 @@ RX <-> TX
 D7 <-> OUT  
 (ESPHome example code: esp8266-template.yaml)
 
+##### Pinout ESP32-S2 mini Board
+![ESP32_S2_mini pinout](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/e8d03e0a-b853-443a-b7e0-6c9bee976555)
+
+
 ##### ESP32-S2 | LD2410B
+
 5V <-> VCC
+
 GND <-> GND
+
 GPIO18 <-> RX
+
 GPIO33 <-> TX
+
 GPIO5 <-> OUT
+
 (ESPHome example code: esp32-S2-template.yaml)
+
+### Step 4
+Connect the LD2410B cable:
+
+![image](https://user-images.githubusercontent.com/100353268/213939599-cc16b760-055d-4786-9fc2-663132c9dd59.png)
 
 ### Step 5
 Solder three wires to the DHT11:
