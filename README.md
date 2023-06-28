@@ -50,7 +50,8 @@ How to connect the stuff
 
 
 ### Step 4
-Connect the LD2410 cable:</ br>
+Connect the LD2410B cable:
+
 ![image](https://user-images.githubusercontent.com/100353268/213939599-cc16b760-055d-4786-9fc2-663132c9dd59.png)
 
 ##### ESP8266 | LD2410B  
