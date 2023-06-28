@@ -44,6 +44,10 @@ How to connect the stuff
 ##### Pinout ESP8266 (Wemos d1 mini) Board
 ![image](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/42f1f7d2-fb61-491c-b4b7-2984aa8e8133)
 
+
+##### Pinout ESP32-S2 mini Board
+/home/pedw/Desktop/Hass/esp_motion_mmwave-main/ESP32_S2_mini pinout.jpg
+
 ### Step 4
 Connect the LD2410 cable:
 ![image](https://user-images.githubusercontent.com/100353268/213939599-cc16b760-055d-4786-9fc2-663132c9dd59.png)
