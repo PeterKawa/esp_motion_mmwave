@@ -146,10 +146,10 @@ And hidden from view inside a (fake) flower pot ;-)
 ![20230601_235500](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/02c19245-f45f-44e9-b6d7-53d5c66e8882)
 
 
-### HLKRadarTool app for configuring LD2410B sensor via Ble
+## HLKRadarTool app for configuring LD2410B sensor via Ble
 - iphone: https://apps.apple.com/ae/app/hlkradartool/id1638651152
 - android: https://www.pgyer.com/Lq8p
-- The app 'translated' to English: https://community.homey.app/t/76714/42?u=peter_kawa
+- The app 'translated' to English: https://community.home-assistant.io/t/453260/40
 
 ### Other sources used  
 https://community.home-assistant.io/t/mmwave-wars-one-sensor-module-to-rule-them-all/453260/2
