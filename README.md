@@ -60,6 +60,15 @@ GND <-> GND
 TX <-> RX  
 RX <-> TX  
 D7 <-> OUT  
+(ESPHome example code: esp8266-template.yaml)
+
+##### ESP32-S2 | LD2410B
+5V <-> VCC
+GND <-> GND
+GPIO18 <-> RX
+GPIO33 <-> TX
+GPIO5 <-> OUT
+(ESPHome example code: esp32-S2-template.yaml)
 
 ### Step 5
 Solder three wires to the DHT11:
