@@ -58,10 +58,15 @@ D7 <-> OUT
 
 ##### ESP32-S2 | LD2410B
 5V <-> VCC
+
 GND <-> GND
+
 GPIO18 <-> RX
+
 GPIO33 <-> TX
+
 GPIO5 <-> OUT
+
 (ESPHome example code: esp32-S2-template.yaml)
 
 ### Step 4
