@@ -203,12 +203,13 @@ binary_sensor:
 
 number:
   - platform: template
-    name: configMaxDistance
+    name: "Max distance"
     id: maxconfigDistance
-    unit_of_measurement: "M"
+    unit_of_measurement: "m"
     min_value: 0.75
     max_value: 6
     step: 0.75
+    #mode: box #default: slider
     update_interval: never
     optimistic: true
     set_action:
@@ -223,12 +224,13 @@ number:
       - switch.turn_off: configmode
 
   - platform: template
-    name: "sensitivity_threshold_(%)"
+    name: "Sensitivity Thold"
     id: allSensitivity
+    unit_of_measurement: "%"
     min_value: 10
     max_value: 100
-    step: 5
-    mode: box
+    step: 2 #5
+    #mode: box # default: slider
     update_interval: never
     optimistic: true
     set_action:
@@ -243,11 +245,12 @@ number:
       - switch.turn_off: configmode
 
   - platform: template
-    name: "motion_hold_(sec)"
+    name: "Motion hold"
     id: noneDuration
     min_value: 0
     # max_value: 32767
     max_value: 900
+    unit_of_measurement: "s"
     step: 1
     mode: box
     update_interval: never
@@ -262,6 +265,7 @@ number:
       - lambda: 'static_cast<LD2410 *>(ld2410)->queryParameters();'
       - delay: 50ms
       - switch.turn_off: configmode
+
 button:
   - platform: restart
     name: "reset/restart_ESP/MCU"
