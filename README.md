@@ -127,7 +127,7 @@ ota:
     password: "KeepGeneratedPassword"
 ```
 
-Once finsihed and sensor is online, you can add it in Home assistant
+Once finished and sensor is online, you can add it in Home assistant
 
 
 #### Home Assistant
