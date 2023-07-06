@@ -127,10 +127,14 @@ ota:
     password: "KeepGeneratedPassword"
 ```
 
-Once finished and sensor is online, you can add it in Home assistant
+
 
 
 #### Home Assistant
+Once finished and sensor is online, you can add it in Home assistant. Often it is recognized already by the ESPHome integration
+![Screenshot from 2023-07-06 12-05-55](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/d381b243-74be-41c0-b133-3ba460edd0d7)
+
+Dashboard example:
 ![Screenshot from 2023-07-06 12-00-59](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/b0d9e776-a052-4f44-a3a0-238123a3417a)
 
 
