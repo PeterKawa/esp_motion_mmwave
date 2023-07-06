@@ -182,8 +182,8 @@ sensor:
     filters:
       - lambda: |-
           return ((x / 10000.0) * -20000000.0) + 1635;
-          ### KY-018 background: https://community.home-assistant.io/t/126274/11 
-          ### https://community.home-assistant.io/t/126274/17
+          // KY-018 background: https://community.home-assistant.io/t/126274/11 
+          // https://community.home-assistant.io/t/126274/17
 
 custom_component:
   - lambda: |-
