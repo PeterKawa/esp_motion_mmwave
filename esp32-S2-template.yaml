@@ -177,7 +177,7 @@ sensor:
   - platform: adc
     pin: GPIO3
     name: "Lux"
-    update_interval: '60s'
+    update_interval: '10s'
     unit_of_measurement: lux
     filters:
       - lambda: |-
