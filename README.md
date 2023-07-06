@@ -90,7 +90,7 @@ D2 <-> DATA
 ##### ESP32-S2 | DHT11  
 3V3 <-> VDD  
 GND <-> GND   
-GPIO 09 <-> DATA 
+GPIO9 <-> DATA 
 
 ##### LUMI sensor KY-018 3pin
 ![Screenshot from 2023-06-28 17-03-35](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/6807c286-8ba2-4509-bcae-18f55125ff2a)
@@ -98,7 +98,7 @@ GPIO 09 <-> DATA
 ##### ESP32-S2 | LUMI sensor KY-018 3pin
 3V3 <-> Middle pin  
 GND <-> - (minus sign)   
-GPIO 03 <-> S 
+GPIO3 <-> S 
 
 Something like this:
 ![signal-2023-03-03-023401_002](https://user-images.githubusercontent.com/74005072/222612311-f6e99d1f-da2b-482f-a668-9d82682899e3.jpeg)
