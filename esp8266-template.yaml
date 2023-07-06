@@ -84,7 +84,7 @@ text_sensor:
 
 sensor:
   - platform: uptime
-    name: "esp8266-template Uptime"
+    name: "Uptime"
     id: uptime_sensor
     update_interval: 60s
     internal: true
@@ -187,7 +187,7 @@ custom_component:
 
 binary_sensor:
   - platform: gpio
-    name: "esp8266-template Detectie"
+    name: "esp8266-template Occupancy"
     id: mmwave_presence_ld2410B
     pin: GPIO13 # =D7
     device_class: motion
