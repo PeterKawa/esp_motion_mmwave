@@ -1,5 +1,7 @@
+# Replace all "esp32S2-template ..." entries with your sensor name
+#
 esphome:
-  name: esp32-S2-basis
+  name: esp32S2-template
   includes:
     - uart_read_line_sensor_ld2410v3.h
   on_boot:
@@ -60,10 +62,10 @@ uart:
 
 switch:
   - platform: safe_mode
-    name: "Use safemode"
+    name: "esp32S2-template Use safemode"
 
   - platform: template
-    name: "Config mode"
+    name: "esp32S2-template Config mode"
     id: configmode
     optimistic: true
     # assumed_state: false
@@ -76,7 +78,7 @@ switch:
       - lambda: 'static_cast<LD2410 *>(ld2410)->setConfigMode(false);'
 
   - platform: template
-    name: "Show Target stats"
+    name: "esp32S2-template Show Target stats"
     id: show_stats
     optimistic: true
     internal: true
@@ -85,14 +87,14 @@ switch:
 
 text_sensor:
   - platform: template
-    name: "Uptime human"
+    name: "esp32S2-template Uptime human"
     id: uptime_human_readable
     icon: mdi:clock-start
     update_interval: 60s
 
 sensor:
   - platform: uptime
-    name: "Uptime"
+    name: "esp32S2-template Uptime"
     id: uptime_sensor
     update_interval: 60s
     internal: true
@@ -159,14 +161,14 @@ sensor:
   - platform: dht
     pin: GPIO9
     temperature:
-      name: "Temperature"
+      name: "esp32S2-template Temperature"
       filters:
         - offset: -1.0
         - sliding_window_moving_average:
             window_size: 10
             send_every: 10
     humidity:
-      name: "Humidity"
+      name: "esp32S2-template Humidity"
       filters:
         - sliding_window_moving_average:
             window_size: 10
@@ -176,13 +178,13 @@ sensor:
 
   - platform: adc
     pin: GPIO3
-    name: "Lux"
-    update_interval: '10s'
+    name: "esp32S2-template Lux"
+    update_interval: '15s'
     unit_of_measurement: lux
     filters:
       - lambda: |-
           return ((x / 10000.0) * -20000000.0) + 1635;
-          // KY-018 background: https://community.home-assistant.io/t/126274/11 
+          // KY-018 background: https://community.home-assistant.io/t/126274/11
           // https://community.home-assistant.io/t/126274/17
 
 custom_component:
@@ -193,7 +195,7 @@ custom_component:
 
 binary_sensor:
   - platform: gpio
-    name: "Detectie"
+    name: "esp32S2-template Occupancy"
     id: mmwave_presence_ld2410B
     pin: GPIO5
     device_class: motion
@@ -208,7 +210,7 @@ binary_sensor:
 
 number:
   - platform: template
-    name: "Max distance"
+    name: "esp32S2-template Max distance"
     id: maxconfigDistance
     unit_of_measurement: "m"
     min_value: 0.75
@@ -229,7 +231,7 @@ number:
       - switch.turn_off: configmode
 
   - platform: template
-    name: "Sensitivity T.hold"
+    name: "esp32S2-template Sensitivity T.hold"
     id: allSensitivity
     unit_of_measurement: "%"
     min_value: 10
@@ -250,7 +252,7 @@ number:
       - switch.turn_off: configmode
 
   - platform: template
-    name: "Motion hold"
+    name: "esp32S2-template Motion hold"
     id: noneDuration
     min_value: 0
     # max_value: 32767
@@ -273,7 +275,7 @@ number:
 
 button:
   - platform: restart
-    name: "Restart ESP"
+    name: "esp32S2-template Restart ESP"
     entity_category: diagnostic
     on_press:
       - switch.turn_on: configmode
