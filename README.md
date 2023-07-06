@@ -131,7 +131,7 @@ Once finsihed and sensor is online, you can add it in Home assistant
 
 
 #### Home Assistant
-![Screenshot from 2023-03-03 03-26-59](https://user-images.githubusercontent.com/74005072/222616032-f306ec58-261c-4068-8ed8-fb3bc4e97893.png)
+![Screenshot from 2023-07-06 11-58-56](https://github.com/PeterKawa/esp_motion_mmwave/assets/74005072/af91eb73-e287-4580-9cb6-e78535b3ba1a)
 
 
 #### Web Config
