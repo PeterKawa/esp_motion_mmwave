@@ -149,7 +149,7 @@ And hidden from view inside a (fake) flower pot ;-)
 ## HLKRadarTool app for configuring LD2410B sensor via Ble
 - iphone: https://apps.apple.com/ae/app/hlkradartool/id1638651152
 - android: https://www.pgyer.com/Lq8p
-- The app 'translated' to English: https://community.home-assistant.io/t/453260/40
+- The app is in Mandarin, but it switches to English when you set your phone's language to English
 
 ### Other sources used  
 https://community.home-assistant.io/t/mmwave-wars-one-sensor-module-to-rule-them-all/453260/2
