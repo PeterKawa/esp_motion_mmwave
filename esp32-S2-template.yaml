@@ -22,6 +22,8 @@ logger:
 
 # Enable Home Assistant API
 api:
+  encryption:
+    key: "xxxxxxxxxxxxxxxxxxxx"
 
 ota:
   password: !secret ota
@@ -58,10 +60,10 @@ uart:
 
 switch:
   - platform: safe_mode
-    name: use_safe_mode
+    name: "Use safemode"
 
   - platform: template
-    name: configmode
+    name: "Config mode"
     id: configmode
     optimistic: true
     # assumed_state: false
@@ -74,7 +76,7 @@ switch:
       - lambda: 'static_cast<LD2410 *>(ld2410)->setConfigMode(false);'
 
   - platform: template
-    name: show_target_stats
+    name: "Show Target stats"
     id: show_stats
     optimistic: true
     internal: true
@@ -83,14 +85,14 @@ switch:
 
 text_sensor:
   - platform: template
-    name: uptime_human_readable
+    name: "Uptime human"
     id: uptime_human_readable
     icon: mdi:clock-start
     update_interval: 60s
 
 sensor:
   - platform: uptime
-    name: uptime_sensor
+    name: "Uptime"
     id: uptime_sensor
     update_interval: 60s
     internal: true
@@ -120,35 +122,35 @@ sensor:
     sensors:
 
   - platform: template
-    name: movingTargetDistance
+    name: "movingTargetDistance"
     id: movingTargetDistance
     unit_of_measurement: "cm"
     accuracy_decimals: 0
     internal: true
 
   - platform: template
-    name: movingTargetEnergy
+    name: "movingTargetEnergy"
     id: movingTargetEnergy
     unit_of_measurement: "%"
     accuracy_decimals: 0
     internal: true
 
   - platform: template
-    name: stillTargetDistance
+    name: "stillTargetDistance"
     id: stillTargetDistance
     unit_of_measurement: "cm"
     accuracy_decimals: 0
     internal: true
 
   - platform: template
-    name: stillTargetEnergy
+    name: "stillTargetEnergy"
     id: stillTargetEnergy
     unit_of_measurement: "%"
     accuracy_decimals: 0
     internal: true
 
   - platform: template
-    name: detectDistance
+    name: "detectDistance"
     id: detectDistance
     unit_of_measurement: "cm"
     accuracy_decimals: 0
@@ -157,14 +159,14 @@ sensor:
   - platform: dht
     pin: GPIO9
     temperature:
-      name: "esp32-S2-basis-temperature"
+      name: "Temperature"
       filters:
         - offset: -1.0
         - sliding_window_moving_average:
             window_size: 10
             send_every: 10
     humidity:
-      name: "esp32-S2-basis-humidity"
+      name: "Humidity"
       filters:
         - sliding_window_moving_average:
             window_size: 10
@@ -174,12 +176,15 @@ sensor:
 
   - platform: adc
     pin: GPIO3
-    name: "esp32-S2-basis-illuminance"
-    update_interval: '30s'
+    name: "Lux"
+    update_interval: '60s'
     unit_of_measurement: lux
     filters:
       - lambda: |-
-          return (x / 10000.0) * 2000000.0;
+          return ((x / 10000.0) * -20000000.0) + 1635;
+          ### KY-018 background: https://community.home-assistant.io/t/126274/11 
+          ### https://community.home-assistant.io/t/126274/17
+
 custom_component:
   - lambda: |-
       return {new LD2410(id(uart_bus))};
@@ -188,15 +193,15 @@ custom_component:
 
 binary_sensor:
   - platform: gpio
-    name: esp32-S2-basis-occupancy
-    id: mmwave_presence_ld2410
+    name: "Detectie"
+    id: mmwave_presence_ld2410B
     pin: GPIO5
     device_class: motion
     on_state:
       then:
         - if:
             condition:
-              - binary_sensor.is_off: mmwave_presence_ld2410
+              - binary_sensor.is_off: mmwave_presence_ld2410B
             then:
               - delay: 150ms
               - script.execute: clear_targets
@@ -224,7 +229,7 @@ number:
       - switch.turn_off: configmode
 
   - platform: template
-    name: "Sensitivity Thold"
+    name: "Sensitivity T.hold"
     id: allSensitivity
     unit_of_measurement: "%"
     min_value: 10
@@ -249,10 +254,10 @@ number:
     id: noneDuration
     min_value: 0
     # max_value: 32767
-    max_value: 900
+    max_value: 200
     unit_of_measurement: "s"
-    step: 1
-    mode: box
+    step: 2
+    #mode: box
     update_interval: never
     optimistic: true
     set_action:
@@ -268,7 +273,7 @@ number:
 
 button:
   - platform: restart
-    name: "reset/restart_ESP/MCU"
+    name: "Restart ESP"
     entity_category: diagnostic
     on_press:
       - switch.turn_on: configmode
