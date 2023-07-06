@@ -1,3 +1,5 @@
+# Replace all "esp8266-template ..." entries with your sensor name
+#
 esphome:
   name: "esp8266-template"
   includes:
@@ -6,7 +8,6 @@ esphome:
     priority: -100
     then:
       - script.execute: get_config
-      
 esp8266:
   board: esp01_1m
 
@@ -51,10 +52,10 @@ uart:
 
 switch:
   - platform: safe_mode
-    name: "Use safemode"
+    name: "esp8266-template Use safemode"
 
   - platform: template
-    name: "Config mode"
+    name: "esp8266-template Config mode"
     id: configmode
     optimistic: true
     # assumed_state: false
@@ -67,7 +68,7 @@ switch:
       - lambda: 'static_cast<LD2410 *>(ld2410)->setConfigMode(false);'
 
   - platform: template
-    name: "Show Target stats"
+    name: "esp8266-template Show Target stats"
     id: show_stats
     optimistic: true
     internal: true
@@ -76,14 +77,14 @@ switch:
 
 text_sensor:
   - platform: template
-    name: "Uptime human"
+    name: "esp8266-template Uptime human"
     id: uptime_human_readable
     icon: mdi:clock-start
     update_interval: 60s
 
 sensor:
   - platform: uptime
-    name: "Uptime"
+    name: "esp8266-template Uptime"
     id: uptime_sensor
     update_interval: 60s
     internal: true
@@ -152,14 +153,14 @@ sensor:
     pin: GPIO4
     # pedw: ESP8266 SDA (GPIO4 / D2) (send/receive data)
     temperature:
-      name: "Temperature"
+      name: "esp8266-template Temperature"
       filters:
         - offset: -1.0
         - sliding_window_moving_average:
             window_size: 10
             send_every: 10
     humidity:
-      name: "Humidity"
+      name: "esp8266-template Humidity"
       filters:
         - sliding_window_moving_average:
             window_size: 10
@@ -169,10 +170,9 @@ sensor:
 
 ### NOTE >>>>>>>> Only GPIO17 is analog-capable on ESP8266.
 ###      BUT GPIO17 lacks on the D1mini Wemos board <<<<<<<<<
-### For ESP32 use:
 ###  - platform: adc
 ###    pin: GPIO3
-###    name: "Lux"
+###    name: "esp8266-template Lux"
 ###    update_interval: '60s'
 ###    unit_of_measurement: lux
 ###    filters:
@@ -187,9 +187,9 @@ custom_component:
 
 binary_sensor:
   - platform: gpio
-    name: "Detectie"
+    name: "esp8266-template Detectie"
     id: mmwave_presence_ld2410B
-    pin: GPIO5
+    pin: GPIO13 # =D7
     device_class: motion
     on_state:
       then:
@@ -202,13 +202,13 @@ binary_sensor:
 
 number:
   - platform: template
-    name: "Max distance"
+    name: "esp8266-template Max distance"
     id: maxconfigDistance
     unit_of_measurement: "m"
     min_value: 0.75
     max_value: 6
     step: 0.75
-    #mode: box #default = slider
+    #mode: box #default: slider
     update_interval: never
     optimistic: true
     set_action:
@@ -223,12 +223,13 @@ number:
       - switch.turn_off: configmode
 
   - platform: template
-    name: "Sensitivity T.hold"
+    name: "esp8266-template Sensitivity T.hold"
     id: allSensitivity
+    unit_of_measurement: "%"
     min_value: 10
     max_value: 100
     step: 2 #5
-    #mode: box # default = slider
+    #mode: box # default: slider
     update_interval: never
     optimistic: true
     set_action:
@@ -243,7 +244,7 @@ number:
       - switch.turn_off: configmode
 
   - platform: template
-    name: "Motion hold"
+    name: "esp8266-template Motion hold"
     id: noneDuration
     min_value: 0
     # max_value: 32767
@@ -266,7 +267,7 @@ number:
 
 button:
   - platform: restart
-    name: "Restart ESP"
+    name: "esp8266-template Restart ESP"
     entity_category: diagnostic
     on_press:
       - switch.turn_on: configmode
