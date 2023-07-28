@@ -2,6 +2,7 @@
 #
 esphome:
   name: esp32S2-template
+  friendly_name: "ESP32S2 Template"
   includes:
     - uart_read_line_sensor_ld2410v3.h
   on_boot:
@@ -28,16 +29,18 @@ api:
     key: "xxxxxxxxxxxxxxxxxxxx"
 
 ota:
-  password: !secret ota
+  password: "xxxxxxxxxxxxxxxx"
 
+### https://esphome.io/components/wifi.html#manual-ips
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
+  #use_address: 192.168.1.29
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: !secret ap_ssid
-    password: !secret ap_password
+    ssid: "esp32S2-template HotSpot"
+    password: xxxxxxxxxxxxxxxxxxxx
 
 substitutions:
   device_name: dev-sensor
@@ -62,10 +65,11 @@ uart:
 
 switch:
   - platform: safe_mode
-    name: "esp32S2-template Use safemode"
+    name: "Use safemode"
+    id: use_safemode
 
   - platform: template
-    name: "esp32S2-template Config mode"
+    name: "Config mode"
     id: configmode
     optimistic: true
     # assumed_state: false
@@ -78,7 +82,7 @@ switch:
       - lambda: 'static_cast<LD2410 *>(ld2410)->setConfigMode(false);'
 
   - platform: template
-    name: "esp32S2-template Show Target stats"
+    name: "Show Target stats"
     id: show_stats
     optimistic: true
     internal: true
@@ -87,14 +91,14 @@ switch:
 
 text_sensor:
   - platform: template
-    name: "esp32S2-template Uptime human"
+    name: "Uptime human"
     id: uptime_human_readable
     icon: mdi:clock-start
     update_interval: 60s
 
 sensor:
   - platform: uptime
-    name: "esp32S2-template Uptime"
+    name: "Uptime"
     id: uptime_sensor
     update_interval: 60s
     internal: true
@@ -161,25 +165,28 @@ sensor:
   - platform: dht
     pin: GPIO9
     temperature:
-      name: "esp32S2-template Temperature"
+      name: "Temperature"
+      id: temperature
       filters:
         - offset: -1.0
         - sliding_window_moving_average:
             window_size: 10
             send_every: 10
     humidity:
-      name: "esp32S2-template Humidity"
+      name: "Humidity"
+      id: humidity
       filters:
         - sliding_window_moving_average:
             window_size: 10
             send_every: 10
-    update_interval: 60s
+    update_interval: 10s
     model: DHT11
 
   - platform: adc
     pin: GPIO3
-    name: "esp32S2-template Lux"
-    update_interval: '15s'
+    name: "Illuminance"
+    id: illuminance
+    update_interval: '60s'
     unit_of_measurement: lux
     filters:
       - lambda: |-
@@ -195,22 +202,22 @@ custom_component:
 
 binary_sensor:
   - platform: gpio
-    name: "esp32S2-template Occupancy"
-    id: mmwave_presence_ld2410B
+    name: "Detectie"
+    id: mmwave_presence_ld2410
     pin: GPIO5
-    device_class: motion
+    device_class: occupancy
     on_state:
       then:
         - if:
             condition:
-              - binary_sensor.is_off: mmwave_presence_ld2410B
+              - binary_sensor.is_off: mmwave_presence_ld2410
             then:
               - delay: 150ms
               - script.execute: clear_targets
 
 number:
   - platform: template
-    name: "esp32S2-template Max distance"
+    name: "Max distance"
     id: maxconfigDistance
     unit_of_measurement: "m"
     min_value: 0.75
@@ -231,7 +238,7 @@ number:
       - switch.turn_off: configmode
 
   - platform: template
-    name: "esp32S2-template Sensitivity T.hold"
+    name: "Sensitivity T.hold"
     id: allSensitivity
     unit_of_measurement: "%"
     min_value: 10
@@ -252,7 +259,7 @@ number:
       - switch.turn_off: configmode
 
   - platform: template
-    name: "esp32S2-template Motion hold"
+    name: "Motion hold"
     id: noneDuration
     min_value: 0
     # max_value: 32767
@@ -275,7 +282,8 @@ number:
 
 button:
   - platform: restart
-    name: "esp32S2-template Restart ESP"
+    name: "Restart ESP"
+    id: restart_esp
     entity_category: diagnostic
     on_press:
       - switch.turn_on: configmode
