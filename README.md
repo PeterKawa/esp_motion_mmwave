@@ -1,7 +1,7 @@
 <i>Forked from kippesikgithub (thanks!)</i>
 Added some links and info, and adjusted to my needs
 
-### LD2410B mmwave Motion detection with temperature, humidity, (lux) sensors for ~€9,-  (housing: ~€6,-)
+### LD2410B mmwave Presence & Motion detection with temperature, humidity, (lux) sensors for ~€9,-  (housing: ~€6,-)
 
 LD2410B mmwave Presence & Motion detection + ESP8266 (Wemos d1 mini) / ESP32-S2 mini Board in ESPHome for Home Assistant. 
 Can be combined with temperature, humidity and lux sensor, but I don't use lux sensor here. The LD2410B can be updated to measure luminance as well (I've read somewhere)
