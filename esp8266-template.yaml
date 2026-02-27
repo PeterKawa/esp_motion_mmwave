@@ -1,8 +1,8 @@
-# Replace all "esp32s2-template ..." entries with your sensor name (no whitespace, all lowercase)
+# Replace all "esp8266-template ..." entries with your sensor name  (no whitespace, all lowercase)
 #
 esphome:
-  name: esp32s2-template
-  friendly_name: "esp32s2-template"
+  name: esp8266-template
+  friendly_name: "esp8266-template"
   includes:
     - uart_read_line_sensor_ld2410v3.h
   on_boot:
@@ -10,10 +10,8 @@ esphome:
     then:
       - script.execute: get_config
 
-esp32:
-  board: esp32-s2-saola-1
-  framework:
-    type: arduino
+esp8266:
+  board: esp01_1m
 
 # Enable logging
 logger:
@@ -26,11 +24,11 @@ logger:
 # Enable Home Assistant API
 api:
   encryption:
-    key: "xxxxxxxxxxxxxxx"
+    key: "xxxxxxxx"
 
 ota:
-  - platform: esphome # uncomment when needed after 2024.6 update
-    password: !secret esp32s2-template_ota
+  - platform: esphome
+    password: !secret esp8266-template_ota
     #num_attempts: 3 
     #safe_mode: none
 
@@ -38,20 +36,16 @@ wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
   #use_address: 192.168.x.x
-  # Manual IP if needed
+  # Optional manual IP 
   #manual_ip: 
     #static_ip: 192.168.x.x
     #gateway: 192.168.x.x
     #subnet: 255.255.255.0
 
-
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "esp32s2-template Hotspot"
-    password: "xxxxxxxxx"
-
-substitutions:
-  #device_name: dev-sensor
+    ssid: "esp8266-template HotSpot"
+    password: "xxxxxx"
 
 web_server:
   port: 80
@@ -70,26 +64,25 @@ external_components:
 captive_portal:
 
 uart:
-  id: uart_bus
-  tx_pin:
-    number: GPIO18
-  rx_pin:
-    number: GPIO33
-  baud_rate: 256000
-  parity: NONE
-  stop_bits: 1
+ id: uart_bus
+ tx_pin:
+   number: TX
+ rx_pin:
+   number: RX
+ baud_rate: 256000
+ parity: NONE
+ stop_bits: 1
 
 switch:
   - platform: safe_mode
-    name: "Restart in Safe Mode"
-    id: use_safemode
+    name: "Restart in Safe mode"
+    id: SafeMode
 
   - platform: template
-    name: "Config Mode"
+    name: "Config mode"
     id: configmode
     optimistic: true
     # assumed_state: false
-    internal: false
     turn_on_action:
       # - switch.turn_off: engineering_mode
       - lambda: 'static_cast<LD2410 *>(ld2410)->setConfigMode(true);'
@@ -99,7 +92,7 @@ switch:
       - lambda: 'static_cast<LD2410 *>(ld2410)->setConfigMode(false);'
 
   - platform: template
-    name: "Show Target Stats"
+    name: "Show target stats"
     id: show_stats
     optimistic: true
     internal: false
@@ -112,7 +105,6 @@ text_sensor:
     id: uptime_human_readable
     icon: mdi:clock-start
     update_interval: 60s
-    internal: false
 
 sensor:
   - platform: uptime
@@ -139,13 +131,13 @@ sensor:
                         (to_string(seconds)) +"s"
                       ).c_str();
 
-  - platform: custom # Deprecated - currently crashes ESP32
+  - platform: custom # currently crashes ESP32
     lambda: |-
       auto uart_component = static_cast<LD2410 *>(ld2410);
       //return {uart_component->movingTargetDistance,uart_component->movingTargetEnergy,uart_component->stillTargetDistance,uart_component->stillTargetEnergy,uart_component->detectDistance};
       return {};
-    sensors:
 
+    sensors:
   - platform: template
     name: "Target Moving Distance"
     id: movingTargetDistance
@@ -182,7 +174,8 @@ sensor:
     internal: false
 
   - platform: dht
-    pin: GPIO9
+    pin: GPIO4
+    # pedw: ESP8266 SCL (GPIO5 / D1) (clock) or SDA (GPIO4 / D2) (send/receive data)
     temperature:
       name: "Temperature"
       id: temperature
@@ -198,20 +191,20 @@ sensor:
         - sliding_window_moving_average:
             window_size: 10
             send_every: 10
-    update_interval: 15s
+    update_interval: 60s
     model: DHT11
 
-  - platform: adc
-    pin: GPIO3
-    name: "Illuminance"
-    id: illuminance
-    update_interval: '60s'
-    unit_of_measurement: lux
-    filters:
-      - lambda: |-
-          return ((x / 10000.0) * -20000000.0) + 1635;
-          // KY-018 background: https://community.home-assistant.io/t/126274/11
-          // https://community.home-assistant.io/t/126274/17
+### NOTE >>>>>>>> Only GPIO17 is analog-capable on ESP8266.
+###      BUT GPIO17 lacks on the D1mini Wemos board <<<<<<<<<
+###  - platform: adc
+###    pin: GPIO17
+###    name: "Illuminance"
+###    id: illuminance
+###    update_interval: '30s'
+###    unit_of_measurement: lux
+###    filters:
+###      - lambda: |-
+###          return (x / 10000.0) * 2000000.0;
 
 custom_component:
   - lambda: |-
@@ -223,8 +216,8 @@ binary_sensor:
   - platform: gpio
     name: "Occupancy"
     id: mmwave_presence_ld2410
-    pin: GPIO5
-    device_class: occupancy
+    pin: GPIO13 # = D7
+    device_class: motion
     on_state:
       then:
         - if:
@@ -242,7 +235,7 @@ number:
     min_value: 0.75
     max_value: 6
     step: 0.75
-    mode: slider #default: slider
+    mode: slider # (or box)
     update_interval: never
     optimistic: true
     set_action:
